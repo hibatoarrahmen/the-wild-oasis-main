@@ -64,9 +64,10 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
 
       const docs = await splitter.createDocuments([text]);
       console.log(docs);
+
       const embeddings = new OllamaEmbeddings({
-        model: "mxbai-embed-large", // Default value
-        baseUrl: "http://localhost:11434", // Default value
+        model: "mxbai-embed-large",
+        baseUrl: "https://2765-44-200-175-227.ngrok-free.app",
       });
 
       const vectorStore = new MemoryVectorStore(embeddings);
