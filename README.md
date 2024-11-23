@@ -27,8 +27,11 @@ In this section, we explore the **Single Page Application (SPA)** architecture u
 - **SPA Development**: Building the application using **Vite** and **React Router**.
 
 Additionally, **LangChain** is integrated to explore **ReactAgent** with retrievals, enhancing the app with AI-driven features.
-demo :
-![Demo](https://github.com/hibatoarrahmen/the-wild-oasis-main/upload/main/Images and demo/Vidéo.mp4)
+
+![Demo](./Images%20and%20demo/Vidéo.gif)
+![Demo](./Images%20and%20demo/Vidéo.mp4)
+
+
 
 ---
 
@@ -36,7 +39,8 @@ demo :
 
 The **Wild Oasis** app is deployed on **AWS** using **CloudFormation** to manage infrastructure, providing a scalable and efficient cloud environment for serving the React web app. Here's how the deployment is structured:
 
-![Alt text](./Images and demo/Deployment.jpeg)
+![Alt text](./Images%20and%20demo/Deployment.jpeg)
+
 
 - **Static Files on S3**: HTML, JavaScript, CSS, and other assets are stored in an S3 bucket.
 - **Serving via CloudFront**: The static files are served securely using **CloudFront** with HTTPS and caching.
@@ -51,7 +55,7 @@ The **Wild Oasis** app is deployed on **AWS** using **CloudFormation** to manage
 
 The **Wild Oasis** project integrates **Retrieval-Augmented Generation (RAG)** using **LangChain** to create a dynamic and intelligent chatbot. The chatbot is capable of answering user queries based on real-time data from the cabins and bookings database.
 
-![Alt text](./Images and demo/RAG-Pipline.jpeg)
+![Alt text](./Images%20and%20demo/RAG-Pipline.jpeg)
 
 ### Key Components:
 
