@@ -1,0 +1,28 @@
+import json
+
+def lambda_handler(event, context):
+    # Get the request from the CloudFront event
+    response = event['Records'][0]['cf']['response']
+
+    # Set the CORS headers
+    response_headers = {
+        'access-control-allow-origin': [
+            {
+                'value': '*'
+            }
+        ],
+        'access-control-allow-methods': [
+            {
+                'value': 'GET'
+            }
+        ],
+        'access-control-allow-headers': [
+            {
+                "value": 'content-type'
+            }
+        ],
+    }
+
+    response['headers'].update(response_headers)
+
+    return response
