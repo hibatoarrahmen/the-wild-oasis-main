@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Wild Oasis** project is a modern web application built using **React**, enhanced with **LangChain** for AI-driven interactions. This project demonstrates the power of modern web development tools, focusing on mastering **React fundamentals**, state management, performance optimization, SPA development, and integrating AI functionalities. Additionally, the application is deployed on **AWS** using **SAM (Serverless Application Model)** for efficient and scalable cloud management.
+The **Wild Oasis** project helps administrators to book and manage hotel capacity. This modern web application is built using **React**, enhanced with **LangChain** for AI-driven interactions, and utilizes **Supabase** as the backend for seamless data management and real-time capabilities. It showcases the power of modern web development tools, focusing on mastering React fundamentals, state management, performance optimization, SPA development, and integrating AI functionalities. These features enable administrators to quickly access data without performing manual searches. Additionally, the application is deployed on **AWS** using the **Serverless Application Model (SAM)** for efficient and scalable cloud management.
 
 ---
 
@@ -23,13 +23,13 @@ In this section, we explore the **Single Page Application (SPA)** architecture u
 - **State & Component Philosophy**: Mastering state placement, component splitting, and reusable components.
 - **Effects & Hooks**: Deep dive into `useEffect`, lifecycle syncing, and custom hooks.
 - **Performance Optimization**: Learning memoization techniques and optimizing renders.
-- **Advanced State Management**: Leveraging `useReducer`, `Context API`, `Redux Toolkit`, and **React Query**.
-- **SPA Development**: Building the application using **Vite** and **React Router**.
+- **Advanced State Management**: Leveraging `useReducer`, `Context API`, `Redux Toolkit`, and `React Query`.
+- **SPA Development**: Building the application using `Vite` and `React Router`.
 
 Additionally, **LangChain** is integrated to explore **ReactAgent** with retrievals, enhancing the app with AI-driven features.
 
 ![Demo](./Images%20and%20demo/Vidéo.gif)
-![Demo](./Images%20and%20demo/Vidéo.mp4)
+
 
 
 
@@ -37,7 +37,7 @@ Additionally, **LangChain** is integrated to explore **ReactAgent** with retriev
 
 ## App Deployment with SAM on AWS
 
-The **Wild Oasis** app is deployed on **AWS** using **CloudFormation** to manage infrastructure, providing a scalable and efficient cloud environment for serving the React web app. Here's how the deployment is structured:
+In this section , we deployed **Wild Oasis** app on **AWS** using **CloudFormation** to manage infrastructure, providing a scalable and efficient cloud environment for serving the React web app. Here's how the deployment is structured:
 
 ![Alt text](./Images%20and%20demo/Deployment.jpeg)
 
@@ -46,8 +46,8 @@ The **Wild Oasis** app is deployed on **AWS** using **CloudFormation** to manage
 - **Serving via CloudFront**: The static files are served securely using **CloudFront** with HTTPS and caching.
 - **EC2 Instance for AI Interaction**: An EC2 instance is running **Ollama** for AI interaction, integrated with a **Lambda function** to handle CORS errors.
 - **GitHub Actions Workflows**:
-  - One workflow for **static code analysis** to ensure high-quality code.
-  - Another for **deployment of infrastructure** and continuous integration.
+  - One workflow for **static code analysis** to ensure high-quality code using **Sonarqube**.
+  - Another for **deployment of infrastructure** using **cloudFormation** template .
 
 ---
 
