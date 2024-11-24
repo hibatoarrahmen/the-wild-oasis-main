@@ -26,7 +26,7 @@ jobs:
     
       - run: sam build --use-container --template /home/runner/work/the-wild-oasis-main/the-wild-oasis-main/infrastructure/template.yaml
      
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name the-wild-oasis
 
       - name: Sync build folder to S3
         run: aws s3 sync ./build s3://the-wild-oasis-web-app-s3-bucket --delete
