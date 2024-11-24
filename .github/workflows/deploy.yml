@@ -8,27 +8,25 @@ on:
         required: true
         default: "us-east-1"
 
+
 jobs:
-  deploy-infrastructure:
-    name: Deploy Infrastructure
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v3
+      - uses: actions/checkout@v3
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+          token: ${{ secrets.TOKEN }}
+      - uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ github.event.inputs.aws_region }}
-
-      - name: SAM Build
-        run: sam build
-
-      - name: SAM Deploy
-        run: sam deploy --guided --region ${{ github.event.inputs.aws_region }}
+          aws-region: us-east-1
+    
+      - run: sam build --use-container
+     
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
 
       - name: Sync build folder to S3
         run: aws s3 sync ./build s3://the-wild-oasis-web-app-s3-bucket --delete
